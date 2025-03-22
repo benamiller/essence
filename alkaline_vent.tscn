@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkvinbo28ywev"]
+[gd_scene load_steps=6 format=3 uid="uid://dkvinbo28ywev"]
 
 [ext_resource type="Texture2D" uid="uid://cmlug7oults22" path="res://sprites/player.png" id="1_6lx6k"]
+[ext_resource type="Script" uid="uid://dyll3a4ab856g" path="res://player.gd" id="1_35y3s"]
+[ext_resource type="Script" uid="uid://ccgdi5avrg74w" path="res://vent.gd" id="3_oba53"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35y3s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oba53"]
+size = Vector2(32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oba53"]
 radius = 20.0
@@ -11,15 +14,17 @@ radius = 20.0
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(50, 100)
+script = ExtResource("1_35y3s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_6lx6k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_35y3s")
+shape = SubResource("RectangleShape2D_oba53")
 
 [node name="Vent" type="Area2D" parent="."]
 position = Vector2(300, 200)
+script = ExtResource("3_oba53")
 
 [node name="Sprite2D" type="Sprite2D" parent="Vent"]
 
